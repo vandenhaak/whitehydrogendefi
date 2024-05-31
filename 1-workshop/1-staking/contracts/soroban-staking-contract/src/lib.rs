@@ -123,6 +123,7 @@ impl StakingContract {
             &env.current_contract_address(),
             &amount,
         );
+        // tracks contributors
         let mut contributor_list : Vec<Address> = env.storage().instance().get(&DataKey::Contributors).unwrap_or(vec![&env,env.current_contract_address()]);
         contributor_list.push_back(contributor.clone());
         // Mint the share token to the contributor
@@ -168,7 +169,7 @@ impl StakingContract {
 
     }
 
-        // 
+        // checks repayment from initial investment
         pub fn check_repayment(env: Env, contributor: Address) -> bool{
             env.storage().instance().get(&DataKey::RecoveredDeposit(contributor)).unwrap_or(false)
         }
