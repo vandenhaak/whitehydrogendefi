@@ -1,0 +1,3 @@
+cargo:rerun-if-changed=build/main.rs
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/avdh/consensus-hackathon-c2defi/1-workshop/1-staking/target/debug/build/typenum-b28453cde6048ccc/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/Users/avdh/consensus-hackathon-c2defi/1-workshop/1-staking/target/debug/build/typenum-b28453cde6048ccc/out/op.rs
